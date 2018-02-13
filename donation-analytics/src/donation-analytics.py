@@ -51,12 +51,11 @@ def repeat_donor_check(data):
 				amount = int(t_amount2) + int (amount)
 				count += 1
 				repeat_donations_dict[(cmte_id2, zip_code, year)] = [amount, count, bisect.insort(amount_list, int(t_amount2))]
-				print amount_list
 				index = (float(percentile) / 100) * float(len(amount_list))
 				index = int(index)
 				percentile_value = amount_list[index]
 			else:
-				amount = t_amount2
+				amount = int(t_amount2)
 				count = 1
 				repeat_donations_dict[(cmte_id2, zip_code, year)] = [amount, count, [amount]]
 				percentile_value = amount
